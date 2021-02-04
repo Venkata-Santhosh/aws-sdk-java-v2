@@ -1,0 +1,6 @@
+version: 0.2
+
+  build:
+    commands:
+      - echo $JAVA_VERSION
+      - native-image --help

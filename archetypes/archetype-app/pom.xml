@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  ~ Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License").
   ~ You may not use this file except in compliance with the License.
@@ -23,11 +23,12 @@
         <version>2.15.70-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>archetype-lambda</artifactId>
+
+    <artifactId>archetype-app</artifactId>
     <packaging>maven-archetype</packaging>
-    <name>AWS Java SDK :: Archetype Lambda</name>
+    <name>AWS Java SDK :: Archetype App</name>
     <description>
-        The AWS SDK for Java - Maven archetype for Java lambda function using AWS Java SDK 2.x
+        The AWS SDK for Java - Maven archetype for a sample application using AWS Java SDK 2.x
     </description>
 
     <properties>
@@ -149,4 +150,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

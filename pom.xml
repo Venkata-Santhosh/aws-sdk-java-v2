@@ -145,6 +145,7 @@
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <japicmp-maven-plugin.version>0.14.4</japicmp-maven-plugin.version>
+        <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
 
         <!-- These properties are used by Step functions for its dependencies -->
         <json-path.version>2.4.0</json-path.version>
@@ -527,6 +528,8 @@
                             <excludeModule>tests-coverage-reporting</excludeModule>
                             <excludeModule>aws-sdk-java</excludeModule>
                             <excludModeule>archetype-lambda</excludModeule>
+                            <excludeModule>archetype-app</excludeModule>
+                            <excludeModule>archetype-tools</excludeModule>
                             <excludeModule>sdk-benchmarks</excludeModule>
                             <excludeModule>bundle</excludeModule>
                             <!-- ignore crt because it's in preview TODO: remove this when CRT is GA -->
