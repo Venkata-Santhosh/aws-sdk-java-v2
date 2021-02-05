@@ -78,6 +78,7 @@
         <module>test/module-path-tests</module>
         <module>test/tests-coverage-reporting</module>
         <module>test/stability-tests</module>
+        <module>test/sdk-native-image-test</module>
     </modules>
     <scm>
         <url>https://github.com/aws/aws-sdk-java-v2.git</url>
@@ -145,7 +146,6 @@
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
         <japicmp-maven-plugin.version>0.14.4</japicmp-maven-plugin.version>
-        <maven-remote-resources-plugin.version>1.7.0</maven-remote-resources-plugin.version>
 
         <!-- These properties are used by Step functions for its dependencies -->
         <json-path.version>2.4.0</json-path.version>
