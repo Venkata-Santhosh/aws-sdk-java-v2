@@ -5,6 +5,7 @@ phases:
   build:
     commands:
     - mvn clean install -pl :archetype-app -P quick --am -T1C
+    - mvn clean install -pl :bom,:bom-internal -P quick
     - CURRENT_VERSION=$(cat pom.xml | grep "<version>" | head -1 | cut -d\> -f 2 | cut -d\< -f 1)
     - echo "Current version is $CURRENT_VERSION"
     - cd .. && mkdir tmp

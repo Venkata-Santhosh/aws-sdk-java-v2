@@ -41,7 +41,6 @@
       <validationRegex>(url-connection-client|apache-client|netty-nio-client)</validationRegex>
     </requiredProperty>
     <requiredProperty key="nativeImage">
-      <defaultValue>false</defaultValue>
       <validationRegex>(true|false)</validationRegex>
     </requiredProperty>
   </requiredProperties>

@@ -39,7 +39,7 @@ Parameter Name | Default Value | Description
 `service` (required) | n/a | Specifies the service client to be used in the lambda function, eg: s3, dynamodb. You can find available services [here][java-sdk-v2-services].
 `groupId`(required) | n/a | Specifies the group ID of the project
 `artifactId`(required) | n/a | Specifies the artifact ID of the project
-`nativeImage` | false | Specifies whether to include graalvm native image configurations
+`nativeImage` | n/a | Specifies whether GraalVM Native Image configuration should be included
 `httpClient` | apache-client | Specifies the http client to be used by the SDK client. Available options are `url-connection-client` (sync), `apache-client` (sync), `netty-nio-client` (async). See [http clients][sdk-http-clients]
 `javaSdkVersion` | Same version as the archetype version | Specifies the version of the AWS Java SDK 2.x to be used
 `version` | 1.0-SNAPSHOT | Specifies the version of the project
