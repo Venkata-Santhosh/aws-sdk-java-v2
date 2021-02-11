@@ -18,6 +18,7 @@ phases:
         -DgroupId=com.test \
         -DnativeImage=true \
         -DartifactId=apache-project \
+        -DhttpClient=apache-client \
         -Dservice=s3  \
         -DinteractiveMode=false
     - |

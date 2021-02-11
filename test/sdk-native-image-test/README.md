@@ -2,10 +2,14 @@
 
 ## Description
 This module contains a sample application using AWS SDK for Java 2.x, and it
- used to test GraalVM Native Image compilation.
+is used to test GraalVM Native Image compilation.
 
 ## How to run
 ```
+mvn clean install -pl :sdk-native-image-test -P quick --am
+
+mvn clean install -pl :bom-internal,:bom
+
 cd test/sdk-native-image-test
 
 # build the image

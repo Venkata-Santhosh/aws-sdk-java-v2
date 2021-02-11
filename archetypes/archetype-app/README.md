@@ -1,9 +1,16 @@
 # Maven Archetype for client applications using the AWS SDK for Java 2.x
 
 ## Description
-This is an Apache Maven Archetype to create a client application template using
- [AWS Java SDK 2.x][aws-java-sdk-v2]. You can use the archetype to generate
-  an application that has out-of-box [GraalVM Native Image][graalvm] support
+This is an Apache Maven Archetype to create a client application with
+a dependency of [AWS Java SDK 2.x][aws-java-sdk-v2].
+
+### Features
+
+The generated application has the following features:
+
+- Uses [Bill of Materials](BOM) to manage SDK dependencies
+- Contains the code to create the SDK client
+- Out-of-box support of GraalVM Native Image when `nativeImage` is enabled
 
 ## Usage
 
@@ -27,6 +34,7 @@ mvn archetype:generate \
     -DarchetypeVersion=2.x \
     -DgroupId=com.test \
     -DnativeImage=true \
+    -DhttpClient=apache-client \
     -DartifactId=sample-project \
     -Dservice=s3  \
     -DinteractiveMode=false
@@ -36,11 +44,11 @@ mvn archetype:generate \
       
 Parameter Name | Default Value | Description
 ---|---|---
-`service` (required) | n/a | Specifies the service client to be used in the lambda function, eg: s3, dynamodb. You can find available services [here][java-sdk-v2-services].
+`service` (required) | n/a | Specifies the service client to be used in the application, eg: s3, dynamodb. Only one service should be provided. You can find available services [here][java-sdk-v2-services]. 
 `groupId`(required) | n/a | Specifies the group ID of the project
 `artifactId`(required) | n/a | Specifies the artifact ID of the project
-`nativeImage` | n/a | Specifies whether GraalVM Native Image configuration should be included
-`httpClient` | apache-client | Specifies the http client to be used by the SDK client. Available options are `url-connection-client` (sync), `apache-client` (sync), `netty-nio-client` (async). See [http clients][sdk-http-clients]
+`nativeImage`(required)  | n/a | Specifies whether GraalVM Native Image configuration should be included
+`httpClient`(required) | n/a | Specifies the http client to be used by the SDK client. Available options are `url-connection-client` (sync), `apache-client` (sync), `netty-nio-client` (async). See [http clients][sdk-http-clients]
 `javaSdkVersion` | Same version as the archetype version | Specifies the version of the AWS Java SDK 2.x to be used
 `version` | 1.0-SNAPSHOT | Specifies the version of the project
 `package` | ${groupId} | Specifies the package name for the classes

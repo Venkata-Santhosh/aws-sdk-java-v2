@@ -37,7 +37,6 @@
     <requiredProperty key="service">
     </requiredProperty>
     <requiredProperty key="httpClient">
-      <defaultValue>apache-client</defaultValue>
       <validationRegex>(url-connection-client|apache-client|netty-nio-client)</validationRegex>
     </requiredProperty>
     <requiredProperty key="nativeImage">

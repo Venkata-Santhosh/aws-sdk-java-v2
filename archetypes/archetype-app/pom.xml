@@ -120,7 +120,7 @@
             </plugin>
 
             <!-- workaround to copy the global.vm and serviceMapping.vm to the sub folders
-                 because gloabl.vm is not so global any more
+                 because global.vm is not so global any more
                  see https://github.com/aws/aws-sdk-java-v2/issues/1981 -->
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>

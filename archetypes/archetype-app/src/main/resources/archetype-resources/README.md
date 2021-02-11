@@ -15,7 +15,7 @@ Below is the structure of the generated project.
 ├── src
 │   ├── main
 │   │   ├── java
-│   │   │   └── pacakge
+│   │   │   └── package
 │   │   │       ├── App.java
 │   │   │       ├── DependencyFactory.java
 │   │   │       └── Handler.java
@@ -23,12 +23,12 @@ Below is the structure of the generated project.
 │   │       └── simplelogger.properties
 │   └── test
 │       └── java
-│           └── pacakge
+│           └── package
 │               └── HandlerTest.java
 ```
 
 - `App.java`: main entry of the application
-- `DependencyFactory.java`: contains the SDK client
+- `DependencyFactory.java`: creates the SDK client
 - `Handler.java`: you can invoke the api calls using the SDK client here.
 
 #[[####]]# Building the project
