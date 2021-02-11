@@ -15,9 +15,12 @@
 
 package software.amazon.awssdk.nativeimagetest;
 
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.http.apache.ApacheHttpClient;
 import software.amazon.awssdk.http.urlconnection.UrlConnectionHttpClient;
+import software.amazon.awssdk.metrics.LoggingMetricPublisher;
 import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.s3.S3AsyncClient;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.testutils.service.AwsTestBase;
@@ -34,6 +37,7 @@ public class DependencyFactory extends AwsTestBase {
         return S3Client.builder()
                        .credentialsProvider(CREDENTIALS_PROVIDER_CHAIN)
                        .httpClientBuilder(UrlConnectionHttpClient.builder())
+                       .overrideConfiguration(o -> o.addMetricPublisher(LoggingMetricPublisher.create()))
                        .region(Region.US_WEST_2)
                        .build();
     }
@@ -42,6 +46,7 @@ public class DependencyFactory extends AwsTestBase {
         return S3Client.builder()
                        .credentialsProvider(CREDENTIALS_PROVIDER_CHAIN)
                        .httpClientBuilder(ApacheHttpClient.builder())
+                       .overrideConfiguration(o -> o.addMetricPublisher(LoggingMetricPublisher.create()))
                        .region(Region.US_WEST_2)
                        .build();
     }
@@ -49,7 +54,24 @@ public class DependencyFactory extends AwsTestBase {
     public static S3AsyncClient s3NettyClient() {
         return S3AsyncClient.builder()
                             .credentialsProvider(CREDENTIALS_PROVIDER_CHAIN)
+                            .overrideConfiguration(o -> o.addMetricPublisher(LoggingMetricPublisher.create()))
                             .region(Region.US_WEST_2)
                             .build();
+    }
+
+    public static DynamoDbClient ddbClient() {
+        return DynamoDbClient.builder()
+                             .credentialsProvider(CREDENTIALS_PROVIDER_CHAIN)
+                             .httpClientBuilder(ApacheHttpClient.builder())
+                             .overrideConfiguration(o -> o.addMetricPublisher(LoggingMetricPublisher.create()))
+                             .region(Region.US_WEST_2)
+                             .build();
+    }
+
+    public static DynamoDbEnhancedClient enhancedClient(DynamoDbClient ddbClient) {
+        return DynamoDbEnhancedClient.builder()
+                                     .dynamoDbClient(ddbClient)
+                                     .build();
+
     }
 }

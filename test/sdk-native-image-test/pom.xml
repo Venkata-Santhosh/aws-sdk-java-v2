@@ -51,6 +51,12 @@
 
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
+            <artifactId>dynamodb-enhanced</artifactId>
+            <version>${awsjavasdk.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
             <artifactId>url-connection-client</artifactId>
             <version>${awsjavasdk.version}</version>
         </dependency>

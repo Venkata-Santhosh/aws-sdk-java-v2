@@ -15,25 +15,7 @@
 
 package software.amazon.awssdk.nativeimagetest;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+public interface TestRunner {
 
-public class App {
-    private static final Logger logger = LoggerFactory.getLogger(App.class);
-
-    private App() {
-    }
-
-    public static void main(String... args) {
-        logger.info("Application starts");
-
-        List<TestRunner> tests = new ArrayList<>();
-        tests.add(new S3TestRunner());
-        tests.add(new DynamoDbEnhancedClientTestRunner());
-
-        tests.forEach(t -> t.runTests());
-        logger.info("Application ends");
-    }
+    void runTests();
 }
