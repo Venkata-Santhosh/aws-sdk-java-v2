@@ -21,7 +21,7 @@ You can use `mvn archetype:generate` to generate a project using this archetype.
 ```
 mvn archetype:generate \
   -DarchetypeGroupId=software.amazon.awssdk \
-  -DarchetypeArtifactId=archetype-app \
+  -DarchetypeArtifactId=archetype-app-quickstart \
   -DarchetypeVersion=2.x
 ```
 
@@ -30,7 +30,7 @@ mvn archetype:generate \
 ```
 mvn archetype:generate \
     -DarchetypeGroupId=software.amazon.awssdk \
-    -DarchetypeArtifactId=archetype-app \
+    -DarchetypeArtifactId=archetype-app-quickstart \
     -DarchetypeVersion=2.x \
     -DgroupId=com.test \
     -DnativeImage=true \

@@ -24,7 +24,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>archetype-app</artifactId>
+    <artifactId>archetype-app-quickstart</artifactId>
     <packaging>maven-archetype</packaging>
     <name>AWS Java SDK :: Archetype App</name>
     <description>

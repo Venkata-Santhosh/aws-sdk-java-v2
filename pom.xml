@@ -528,7 +528,7 @@
                             <excludeModule>tests-coverage-reporting</excludeModule>
                             <excludeModule>aws-sdk-java</excludeModule>
                             <excludModeule>archetype-lambda</excludModeule>
-                            <excludeModule>archetype-app</excludeModule>
+                            <excludeModule>archetype-app-quickstart</excludeModule>
                             <excludeModule>archetype-tools</excludeModule>
                             <excludeModule>sdk-benchmarks</excludeModule>
                             <excludeModule>bundle</excludeModule>

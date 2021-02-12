@@ -4,7 +4,7 @@ phases:
 
   build:
     commands:
-    - mvn clean install -pl :archetype-app -P quick --am -T1C
+    - mvn clean install -pl :archetype-app-quickstart -P quick --am -T1C
     - mvn clean install -pl :bom,:bom-internal -P quick
     - CURRENT_VERSION=$(cat pom.xml | grep "<version>" | head -1 | cut -d\> -f 2 | cut -d\< -f 1)
     - echo "Current version is $CURRENT_VERSION"
@@ -13,7 +13,7 @@ phases:
     - |
       mvn archetype:generate \
         -DarchetypeGroupId=software.amazon.awssdk \
-        -DarchetypeArtifactId=archetype-app \
+        -DarchetypeArtifactId=archetype-app-quickstart \
         -DarchetypeVersion=$CURRENT_VERSION \
         -DgroupId=com.test \
         -DnativeImage=true \
@@ -31,7 +31,7 @@ phases:
     - |
       mvn archetype:generate \
         -DarchetypeGroupId=software.amazon.awssdk \
-        -DarchetypeArtifactId=archetype-app \
+        -DarchetypeArtifactId=archetype-app-quickstart \
         -DarchetypeVersion=$CURRENT_VERSION \
         -DgroupId=com.test \
         -DnativeImage=true \
@@ -49,7 +49,7 @@ phases:
     - |
       mvn archetype:generate \
         -DarchetypeGroupId=software.amazon.awssdk \
-        -DarchetypeArtifactId=archetype-app \
+        -DarchetypeArtifactId=archetype-app-quickstart \
         -DarchetypeVersion=$CURRENT_VERSION \
         -DgroupId=com.test \
         -DhttpClient=netty-nio-client \
